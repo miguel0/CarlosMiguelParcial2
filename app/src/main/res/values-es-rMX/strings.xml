@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Parcial2</string>
+    <string name="b_load">CARGAR</string>
+    <string name="b_toast">TOSTAR</string>
+    <string name="t_text">Nombre: </string>
+    <string name="ob_name">Nombre: </string>
+    <string name="ob_age">Edad: </string>
+    <string name="tv_name">Nombre</string>
+    <string name="tv_age">Edad</string>
+</resources>
