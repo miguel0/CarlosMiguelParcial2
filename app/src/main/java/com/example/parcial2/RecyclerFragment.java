@@ -34,7 +34,7 @@ public class RecyclerFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         people = new ArrayList<>();
         rvPeople = getView().findViewById(R.id.rvPeople);
-        adapter = new PeopleAdapter(people);
+        adapter = new PeopleAdapter(people, getContext());
         rvPeople.setAdapter(adapter);
         rvPeople.setLayoutManager(new LinearLayoutManager(getContext()));
     }

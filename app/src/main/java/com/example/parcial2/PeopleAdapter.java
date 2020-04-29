@@ -4,7 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,9 +16,11 @@ import java.util.List;
 public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder> {
 
     private List<Person> mPeople;
+    private Context context;
 
-    public PeopleAdapter(List<Person> people) {
+    public PeopleAdapter(List<Person> people, Context context) {
         mPeople = people;
+        this.context = context;
     }
 
     @NonNull
@@ -33,10 +37,16 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Person person = mPeople.get(position);
+        final Person person = mPeople.get(position);
 
         holder.tvName.setText("Name: " + person.getName());
         holder.tvAge.setText("Age: " + person.getAge());
+        holder.btToast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,  "Name: " + person.getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -48,12 +58,14 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
 
         private TextView tvName;
         private TextView tvAge;
+        private Button btToast;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvName = itemView.findViewById(R.id.tvName);
             tvAge = itemView.findViewById(R.id.tvAge);
+            btToast = itemView.findViewById(R.id.btToast);
         }
     }
 }
