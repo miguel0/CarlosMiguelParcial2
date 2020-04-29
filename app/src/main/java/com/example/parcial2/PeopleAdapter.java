@@ -39,12 +39,12 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Person person = mPeople.get(position);
 
-        holder.tvName.setText(context.getString(R.string.ob_name) + person.getName());
-        holder.tvAge.setText(context.getString(R.string.ob_age) + person.getAge());
+        holder.tvName.setText(context.getString(R.string.ob_name) + " " + person.getName());
+        holder.tvAge.setText(context.getString(R.string.ob_age) + " " + person.getAge());
         holder.btToast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,  context.getString(R.string.t_text) + person.getName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,  context.getString(R.string.t_text) + " " + person.getName(), Toast.LENGTH_SHORT).show();
             }
         });
     }
