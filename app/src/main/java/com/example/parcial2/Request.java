@@ -13,7 +13,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Request {
+public class Request extends Thread {
     private Handler handler;
     private String url;
 
